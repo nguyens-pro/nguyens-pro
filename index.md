@@ -1,2 +1,2 @@
 
-[A/B Testing with LaunchDarly](./ab-testing-with-launch-darkly/)
+[A/B Testing with LaunchDarly](./howto/ab-testing-with-launch-darkly/)
