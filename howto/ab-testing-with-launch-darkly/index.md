@@ -7,7 +7,7 @@ A feature flag is to control whether we should show feature A (usually the curre
 Application   --------        request w/     -------->   LaunchDarkly
                       user data & environment                  |
                                                                |
-                                                      pre-configured logic
+                                                     pre-configured logic
                                                                |
                                                                |
 Feature A or B <---------    respond w/   <----------  pick value A or B
