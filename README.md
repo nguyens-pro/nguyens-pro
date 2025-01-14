@@ -1,4 +1,4 @@
-## Hi there 👋
+## Hi there 👋! Here is how kuteo do that...
 
 <!--
 **nguyens-pro/nguyens-pro** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
