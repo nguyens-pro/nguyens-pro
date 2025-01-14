@@ -37,8 +37,8 @@ User Context ----> Feature Flag 1 ----> Rule 1 ----> A
 5. Select **Experiment** as the flag configuration
 6. Select **Boolean** as the flag type
 7. Name the **Variations** with
-    - "Feature A (Current)": false
-    - "Feature B (New)": true
+    - Variation: "Feature A (Current)"; Value: false; Description: "Current feature"
+    - Variation: "Feature B (New)"; Value: true ; Description: "New feature"
 8. Set the **Default variations** to
     - Serve when targeting is ON: "Feature B (New)"
     - Serve when targeting is OFF: "Feature A (Current)"
@@ -69,3 +69,25 @@ User Context ----> Segment 1 ----> Rule 1 ----> Included
 8. Save the flag
 
 ## Step 3: Connect the flag and the segment
+
+## Step 4: Create a metric
+Metrics refer to the data and insights collected regarding the performance and usage of feature flags within an application. LaunchDarkly provides a set of metrics and analytics tools to monitor the impact of feature changes align with the business goals.
+```
+App Event  ---->  Metric  ---->  event key  ---->  recorded (count)
+                     |               |
+                     |               |---------->  ignored
+                     |
+                     |-------->  refresh data and insights
+```
+1. Log in to the LaunchDarkly Dashboard
+2. Navigate to **Metrics** tab
+3. _Select an appropriate environment if necessary_
+4. Select **Create** -> **Create metric** to create a new metric
+5. Select **Custom** as the event type
+6. Enter the key of the event to be measured
+7. Select **Count** (Number of times an event occured) to measure
+8. Select Metric definition as:
+     - Average of event `count` per userId where higher is better
+9. Name the metric with a corresponding key
+10. Save the metric
+
