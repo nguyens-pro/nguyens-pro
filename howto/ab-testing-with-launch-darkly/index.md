@@ -1,14 +1,5 @@
 # A/B Testing with LaunchDarly
 [LaunchDarkly](https://launchdarkly.com) is a feature management and experimentation for banking, payments, insurance, and wealth management firms.
-
-## Problem Statement
-We'd like to understand user behaviors when the feature A is replaced by a new one, B.
-* The user segment to be tested is Norwegian users.
-* The distribution rate for users in the segment is 50/50.
-* The metrics (mesurement) include the rate of user interactions to the new feature.
-
-## Create a feature flag
-A feature flag is to control whether we should show feature A (usually the current behavior) or feature B (the new behavior) during the testing period. Using a feature flag, we could isolate the logic controlling the switch that may depend on different criteria like user type, characteristics, and environment.
 ```
 Application   --------        request w/     -------->   LaunchDarkly
                       user data & environment                  |
@@ -18,6 +9,26 @@ Application   --------        request w/     -------->   LaunchDarkly
                                                                |
 Feature A or B <---------    respond w/   <----------  pick value A or B
     in App                the feature value
+```
+
+## Problem Statement
+We'd like to understand user behaviors when the feature A is replaced by a new one, B.
+* The user segment to be tested is Norwegian users.
+* The distribution rate for users in the segment is 50/50.
+* The metrics (mesurement) include the rate of user interactions to the new feature.
+
+## Step 1: Create a feature flag
+A feature flag is to control whether we should show feature A (usually the current behavior) or feature B (the new behavior) during the testing period. Using a feature flag, we could isolate the logic controlling the switch that may depend on different criteria like user type, characteristics, and environment.
+```
+User Context ----> Feature Flag 1 ----> Rule 1 ----> A
+                       |                  |
+                       |                  |--------> B
+                       |
+                       |--------------> Rule 2 ----> A
+                       |                  |
+                       |                  |--------> B
+                       |
+                       |--------> Default Rule ----> A
 ```
 1. Log in to the LaunchDarkly Dashboard
 2. Navigate to **Flags** tab
@@ -34,12 +45,13 @@ Feature A or B <---------    respond w/   <----------  pick value A or B
 9. Select **SDKs using Mobile key** under **Client-side SDK availability** section
 10. Save the flag
 
-## Create a segment
+## Step 2: Create a segment
 A segment is to build groups for the A/B testing. The groups could be determined by rules or by listing out member contexts. Segments will be referenced by the feature flag as the A/B testing targets.
 ```
 User Context ----> Segment 1 ----> Rule 1 ----> Included
                        |             |
                        |             |--------> Excluded
+                       |
                        |---------> Rule 2 ----> Included
                                      |
                                      |--------> Excluded
@@ -56,3 +68,4 @@ User Context ----> Segment 1 ----> Rule 1 ----> Included
      - Include: all targets
 8. Save the flag
 
+## Step 3: Connect the flag and the segment
