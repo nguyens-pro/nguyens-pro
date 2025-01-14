@@ -86,8 +86,8 @@ App Event  ---->  Metric  ---->  event key  ---->  recorded (count)
 5. Select **Custom** as the event type
 6. Enter the key of the event to be measured
 7. Select **Count** (Number of times an event occured) to measure
-8. Select Metric definition as:
-     - Average of event `count` per userId where higher is better
+8. Select **Metric definition** as:
+     - **Average** of event `count` per **userId** where **higher is better**
 9. Name the metric with a corresponding key
 10. Save the metric
 
