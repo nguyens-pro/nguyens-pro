@@ -73,11 +73,11 @@ User Context ----> Segment 1 ----> Rule 1 ----> Included
 ## Step 4: Create a metric
 Metrics refer to the data and insights collected regarding the performance and usage of feature flags within an application. LaunchDarkly provides a set of metrics and analytics tools to monitor the impact of feature changes align with the business goals.
 ```
-App Event  ---->  Metric  ---->  event key  ---->  recorded (count)
-                     |               |
-                     |               |---------->  ignored
+App Event  ---->  Metric 1  ---->  event key  ---->  recorded (count)
+                     |                 |
+                     |                 |---------->  ignored (no count)
                      |
-                     |-------->  refresh data and insights
+                     |---------->  refresh data and insights
 ```
 1. Log in to the LaunchDarkly Dashboard
 2. Navigate to **Metrics** tab
