@@ -42,7 +42,9 @@ User Context ----> Feature Flag 1 ----> Rule 1 ----> A
 8. Set the **Default variations** to
     - Serve when targeting is ON: "Feature B (New)"
     - Serve when targeting is OFF: "Feature A (Current)"
-9. Select **SDKs using Mobile key** under **Client-side SDK availability** section
+9. Under **Client-side SDK availability** section, select:
+    -  **SDKs using Mobile key**
+    -  **SDKs using Client-side ID**
 10. Save the flag
 
 ## Step 2: Create a segment
